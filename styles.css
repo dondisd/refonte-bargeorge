@@ -36,7 +36,7 @@ h1, h2, .wordmark, .foot-name { font-family: 'Libre Baskerville', serif; font-we
 .hero-media video { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
 .hero-veil {
   position: absolute; inset: 0;
-  background: linear-gradient(200deg, rgba(27,35,64,0.82) 0%, rgba(27,35,64,0.45) 45%, rgba(27,35,64,0.12) 100%);
+  background: linear-gradient(180deg, rgba(27,35,64,0.42) 0%, rgba(27,35,64,0.16) 40%, rgba(27,35,64,0.88) 90%);
 }
 .gold-frame {
   position: absolute; inset: 12px; pointer-events: none;
@@ -50,10 +50,11 @@ h1, h2, .wordmark, .foot-name { font-family: 'Libre Baskerville', serif; font-we
 .wordmark { font-size: 1.35rem; letter-spacing: 0.02em; text-decoration: none; color: var(--creme); }
 .header-tel { font-size: 0.9rem; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 
-/* Contenu ancré dans le TIERS SUPÉRIEUR, aligné à gauche — l'entrée du manoir respire en bas */
+/* Contenu ancré EN BAS à gauche — la vidéo du manoir occupe le regard en haut */
 .hero-core {
   position: relative; z-index: 1;
-  padding: 4.5svh 30px 0;
+  margin-top: auto;
+  padding: 0 30px 5svh;
   max-width: 640px;
 }
 .kicker {
@@ -143,7 +144,7 @@ h2 { font-size: clamp(1.6rem, 5.4vw, 2.4rem); line-height: 1.2; margin-bottom: 3
 /* ---------- Desktop ---------- */
 @media (min-width: 860px) {
   .hero-top { padding: 32px 52px 10px; }
-  .hero-core { padding: 5svh 52px 0; }
+  .hero-core { padding: 0 52px 6svh; }
   .gold-frame { inset: 20px; }
   .diptych { grid-template-columns: 1fr 1fr; }
 }
