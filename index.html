@@ -12,38 +12,36 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
-  <link rel="preload" as="image" href="assets/frames/frame-001.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <main>
-    <!-- HERO — H9 scroll-scrub : leur vrai film du manoir avance avec le scroll, dans un fin cadre laiton -->
-    <section class="hero scrub" data-frames="64" data-path="assets/frames/frame-">
-      <div class="scrub-stage">
-        <header class="hero-top">
-          <a class="wordmark" href="#">Bar George</a>
-          <a class="header-tel" href="tel:+15146699243">(514) 669-9243</a>
-        </header>
-        <div class="scrub-frame" aria-hidden="true">
-          <img class="scrub-img" src="assets/frames/frame-001.webp" alt="" width="720" height="1080" fetchpriority="high" loading="eager">
+    <!-- HERO — H7 « carton d'invitation » : titre royal sur crème, le film du manoir JOUE dans une bande cinémascope à filets laiton -->
+    <section class="hero">
+      <header class="hero-top">
+        <a class="wordmark" href="#">Bar George</a>
+        <a class="header-tel" href="tel:+15146699243">(514) 669-9243</a>
+      </header>
+      <div class="invitation">
+        <p class="kicker rules stagger s1"><span>Modern English dining · The Mount Stephen, est. 1880</span></p>
+        <h1 class="stagger s2">A Victorian mansion,<br>at your table.</h1>
+      </div>
+      <div class="film-band stagger s3" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="auto" poster="assets/hero.webp" width="1920" height="1080">
+          <source src="assets/film-band.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero-under">
+        <p class="hero-sub stagger s4">Breakfast at 7, dinner in the salon, cocktails until 2. Downtown Montreal's grandest room.</p>
+        <div class="hero-cta stagger s4">
+          <a class="btn-primary" href="https://app.tablz.com/bar-george/">Reserve a table</a>
         </div>
-        <div class="hero-overlay">
-          <div class="hero-lede">
-            <p class="kicker stagger s1">Modern English dining<br>The Mount Stephen, est. 1880</p>
-            <h1 class="stagger s2">A Victorian mansion,<br>at your table.</h1>
-          </div>
-          <div class="hero-under">
-            <div class="hero-cta stagger s3">
-              <a class="btn-primary" href="https://app.tablz.com/bar-george/">Reserve a table</a>
-            </div>
-            <a class="proof stagger s4" href="https://maps.google.com/?q=Bar+George+1440+Rue+Drummond+Montréal" rel="noopener">
-              <span class="stars" aria-hidden="true">★★★★★</span>
-              <span><strong>4.5</strong> — 4,598 Google reviews</span>
-            </a>
-            <p class="scroll-cue stagger s4">Scroll — the room follows.</p>
-          </div>
-        </div>
+        <a class="proof stagger s5" href="https://maps.google.com/?q=Bar+George+1440+Rue+Drummond+Montréal" rel="noopener">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span><strong>4.5</strong> — 4,598 Google reviews</span>
+        </a>
       </div>
     </section>
 
