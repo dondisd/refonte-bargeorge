@@ -25,64 +25,68 @@ img { max-width: 100%; display: block; }
 a { color: inherit; }
 h1, h2, .wordmark, .foot-name { font-family: 'Libre Baskerville', serif; font-weight: 400; }
 
-/* ---------- Hero H7 : carton d'invitation + bande film ---------- */
-.hero { min-height: 100svh; display: flex; flex-direction: column; }
+/* ---------- Hero (composition v3) : plein écran sombre, film qui joue, diagonale haut-gauche / bas-droite ---------- */
+.hero {
+  min-height: 100svh; display: flex; flex-direction: column;
+  position: relative; isolation: isolate;
+  color: var(--creme);
+  background: url("assets/hero.webp") center 45% / cover no-repeat; /* fallback */
+}
+.hero-media { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.hero-media video { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.hero-veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(19,24,41,0.6) 0%, rgba(19,24,41,0.22) 42%, rgba(19,24,41,0.82) 88%);
+}
+.gold-frame {
+  position: absolute; inset: 12px; pointer-events: none;
+  border: 1px solid rgba(195, 163, 94, 0.55);
+}
 .hero-top {
   display: flex; justify-content: space-between; align-items: baseline;
-  padding: 20px 24px 8px;
+  padding: 26px 30px 8px;
+  position: relative; z-index: 2;
 }
-.wordmark { font-size: 1.35rem; letter-spacing: 0.02em; text-decoration: none; color: var(--navy); }
+.wordmark { font-size: 1.35rem; letter-spacing: 0.02em; text-decoration: none; color: var(--creme); }
 .header-tel { font-size: 0.9rem; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 
-.invitation { text-align: center; padding: 3.5svh 24px 26px; }
+.hero-overlay {
+  position: relative; z-index: 1;
+  flex: 1; display: flex; flex-direction: column; justify-content: space-between;
+  padding: 6px 30px 4.5svh;
+}
+.hero-lede { text-align: left; max-width: 640px; }
 .kicker {
   font-size: 0.74rem; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase;
-  color: var(--laiton); margin-bottom: 14px;
+  color: #d9bc7d; margin-bottom: 12px;
 }
-/* Filets d'invitation de part et d'autre du kicker */
-.kicker.rules { display: flex; align-items: center; gap: 14px; justify-content: center; }
-.kicker.rules::before, .kicker.rules::after {
-  content: ""; flex: 0 1 70px; height: 3px;
-  border-top: 1px solid var(--laiton); border-bottom: 1px solid var(--laiton);
+.kicker.rules, .kicker.center { color: var(--laiton); }
+.hero-lede h1 {
+  font-size: clamp(2.1rem, 8vw, 3.8rem);
+  line-height: 1.14;
+  text-shadow: 0 2px 20px rgba(19, 24, 41, 0.6);
 }
-.kicker.rules span { max-width: 30ch; }
-.invitation h1 {
-  font-size: clamp(2.1rem, 8vw, 3.9rem);
-  line-height: 1.16;
-  color: var(--navy);
-}
-
-/* La bande film : le manoir JOUE, encadré de filets laiton */
-.film-band {
-  border-top: 1px solid var(--laiton); border-bottom: 1px solid var(--laiton);
-  box-shadow: 0 1px 0 var(--creme), 0 4px 0 rgba(172, 138, 75, 0.35), 0 -1px 0 var(--creme), 0 -4px 0 rgba(172, 138, 75, 0.35);
-}
-.film-band video { width: 100%; height: auto; display: block; max-height: 44svh; object-fit: cover; }
-
-.hero-under {
-  flex: 1;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center;
-  padding: 22px 24px 4svh; gap: 4px;
-}
-.hero-sub { color: #4a4b60; font-size: 0.98rem; max-width: 52ch; margin-bottom: 14px; }
+.hero-under { display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 10px; }
+.hero-sub { color: rgba(244, 239, 230, 0.85); font-size: 0.98rem; max-width: 46ch; }
 
 .btn-primary {
   display: inline-block;
-  background: var(--navy); color: var(--creme);
+  background: var(--laiton); color: #131829;
   font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase;
   text-decoration: none;
   padding: 16px 38px;
-  border: 1px solid var(--laiton);
   min-height: 48px;
   transition: transform 0.16s ease, background 0.16s ease;
 }
-.btn-primary:hover, .btn-primary:focus-visible { transform: translateY(-2px); background: #26305a; }
+.btn-primary:hover, .btn-primary:focus-visible { transform: translateY(-2px); background: #d4b671; }
+/* Boutons sur fonds clairs (sections) */
+.diptych-block .btn-primary { background: var(--navy); color: var(--creme); border: 1px solid var(--laiton); }
+.diptych-block .btn-primary:hover { background: #26305a; }
 .cta-note { font-size: 0.88rem; margin-top: 12px; color: #4a4b60; }
 .cta-note a { color: var(--encre); }
 
-.proof { display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; text-decoration: none; font-size: 0.95rem; }
-.proof .stars { color: var(--laiton); letter-spacing: 0.12em; font-size: 0.9rem; }
+.proof { display: inline-flex; align-items: center; gap: 10px; margin-top: 6px; text-decoration: none; font-size: 0.95rem; color: var(--creme); }
+.proof .stars { color: #d9bc7d; letter-spacing: 0.12em; font-size: 0.9rem; }
 
 .stagger { opacity: 0.012; transform: translateY(16px); animation: rise 0.7s ease-out forwards; }
 .s1 { animation-delay: 0.1s; } .s2 { animation-delay: 0.26s; } .s3 { animation-delay: 0.44s; }
@@ -136,16 +140,15 @@ h2 { font-size: clamp(1.6rem, 5.4vw, 2.4rem); line-height: 1.2; margin-bottom: 3
 
 /* ---------- Desktop ---------- */
 @media (min-width: 860px) {
-  .hero-top { padding: 26px 48px 10px; }
-  .invitation { padding-top: 4svh; }
-  .film-band video { max-height: 48svh; }
+  .hero-top { padding: 32px 52px 10px; }
+  .hero-overlay { padding: 10px 52px 6svh; }
+  .gold-frame { inset: 20px; }
   .diptych { grid-template-columns: 1fr 1fr; }
 }
 
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
-  .film-band video { display: none; }
-  .film-band { background: url("assets/hero.webp") center / cover no-repeat; aspect-ratio: 1440 / 893; }
+  .hero-media video { display: none; } /* le fallback image du .hero prend le relais */
   .stagger { animation: none; opacity: 1; transform: none; }
   [data-reveal] { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }

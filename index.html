@@ -18,30 +18,33 @@
 <body>
 
   <main>
-    <!-- HERO — H7 « carton d'invitation » : titre royal sur crème, le film du manoir JOUE dans une bande cinémascope à filets laiton -->
-    <section class="hero">
+    <!-- HERO — composition v3 : plein écran sombre, film RÉEL qui JOUE (fluide), titre haut-gauche, CTA bas-droite, liseré doré -->
+    <section class="hero hero-night">
+      <div class="hero-media" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="auto" poster="assets/hero.webp" width="1000" height="1500">
+          <source src="assets/hero-loop.mp4" type="video/mp4">
+        </video>
+        <div class="hero-veil"></div>
+        <div class="gold-frame"></div>
+      </div>
       <header class="hero-top">
         <a class="wordmark" href="#">Bar George</a>
         <a class="header-tel" href="tel:+15146699243">(514) 669-9243</a>
       </header>
-      <div class="invitation">
-        <p class="kicker rules stagger s1"><span>Modern English dining · The Mount Stephen, est. 1880</span></p>
-        <h1 class="stagger s2">A Victorian mansion,<br>at your table.</h1>
-      </div>
-      <div class="film-band stagger s3" aria-hidden="true">
-        <video autoplay muted loop playsinline preload="auto" poster="assets/hero.webp" width="1920" height="1080">
-          <source src="assets/film-band.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="hero-under">
-        <p class="hero-sub stagger s4">Breakfast at 7, dinner in the salon, cocktails until 2. Downtown Montreal's grandest room.</p>
-        <div class="hero-cta stagger s4">
-          <a class="btn-primary" href="https://app.tablz.com/bar-george/">Reserve a table</a>
+      <div class="hero-overlay">
+        <div class="hero-lede">
+          <p class="kicker stagger s1">Modern English dining<br>The Mount Stephen, est. 1880</p>
+          <h1 class="stagger s2">A Victorian mansion,<br>at your table.</h1>
         </div>
-        <a class="proof stagger s5" href="https://maps.google.com/?q=Bar+George+1440+Rue+Drummond+Montréal" rel="noopener">
-          <span class="stars" aria-hidden="true">★★★★★</span>
-          <span><strong>4.5</strong> — 4,598 Google reviews</span>
-        </a>
+        <div class="hero-under">
+          <div class="hero-cta stagger s3">
+            <a class="btn-primary" href="https://app.tablz.com/bar-george/">Reserve a table</a>
+          </div>
+          <a class="proof stagger s4" href="https://maps.google.com/?q=Bar+George+1440+Rue+Drummond+Montréal" rel="noopener">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span><strong>4.5</strong> — 4,598 Google reviews</span>
+          </a>
+        </div>
       </div>
     </section>
 
